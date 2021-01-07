@@ -4,45 +4,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
     <title>Vue js app</title>
 </head>
 
 <body>
     <div id="app">
         <h1>Vue Mart</h1>
-        <h2>Shopping Cart</h2>
+        <h2>Shopping cart</h2>
         <ul>
             <li v-for="item in shoppingCart">
-                {{ item.label }} : {{ item.cost }}$
+                {{ item.label }} : {{ item.cost}}$
             </li>
         </ul>
-        <p>Total Amount {{ totalAmaount }}</p>
+        <p>Total Amount : {{ totalAmount }}$</p>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
     <script>
         const app = new Vue({
             el: "#app",
             data: {
                 shoppingCart: [
-                    {
-                        label: "Fruits",
-                        cost: 10,
-                        url: "/Fruits.html"
-                    },
-                    {
-                        label: "Juice",
-                        cost: 7,
-                        url: "/juice.html"
-                    },
-                    {
-                        label: "Donnuts",
-                        cost: 12,
-                        url: "/Donnuts.html"
-                    }
+                    { label: "Fruits", cost: 16, url: "/Fruits.html" },
+                    { label: "Wine", cost: 4, url: "/Wine.html" },
+                    { label: "Oranges", cost: 7, url: "/Oranges.html" },
                 ]
             },
             computed: {
-                totalAmaount() {
+                totalAmount() {
                     let total = 0;
                     this.shoppingCart.forEach(item => {
                         total += item.cost
