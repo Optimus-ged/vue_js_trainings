@@ -10,26 +10,44 @@
 <body>
     <div id="app">
         <h1>Vue Mart</h1>
-        <h2>Pannier d'achat</h2>
+        <h2>Shopping cart</h2>
         <ul>
-            <li>Pommes {{ costOfPomme }}$</li>
-            <li>tomates {{ costOfTomatoes }}$</li>
-            <li>orange {{ costOfOrange }}$</li>
+            <li v-for="item in shoppingCart">
+                {{ item.label }} : {{ item.cost}}
+            </li>
         </ul>
-        <p>Total amount : {{ totalPrice }}$</p>
+        <p>Total amount : {{ totalPrice }}</p>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
     <script>
         const app = new Vue({
             el: "#app",
             data: {
-                costOfPomme: 2,
-                costOfTomatoes: 3,
-                costOfOrange: 10
+                shoppingCart: [
+                    {
+                        label: "Apples",
+                        cost: 10,
+                        url: "/Apples.html"
+                    },
+                    {
+                        label: "Coconuts",
+                        cost: 6,
+                        url: "/Coconuts.html"
+                    },
+                    {
+                        label: "Oranges",
+                        cost: 4,
+                        url: "/Oranges.html"
+                    },
+                ]
             },
             computed: {
                 totalPrice() {
-                    return this.costOfPomme + this.costOfTomatoes + this.costOfOrange;
+                    let total = 0;
+                    this.shoppingCart.forEach(item => {
+                        total += item.cost
+                    });
+                    return total;
                 }
             }
         });
