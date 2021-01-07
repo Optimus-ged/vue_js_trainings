@@ -12,24 +12,24 @@
         <h1>Vue Mart</h1>
         <h2>Pannier d'achat</h2>
         <ul>
-            <li>Pommes : {{ costOfPomme }}$</li>
-            <li>bananes : {{ costOfBana }}$</li>
-            <li>coco : {{ costOfCoco }}$</li>
+            <li>Pommes {{ costOfPomme }}$</li>
+            <li>tomates {{ costOfTomatoes }}$</li>
+            <li>orange {{ costOfOrange }}$</li>
         </ul>
-        <p>Total : {{ totalPrice }}$</p>
+        <p>Total amount : {{ totalPrice }}$</p>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
     <script>
         const app = new Vue({
             el: "#app",
             data: {
-                costOfPomme: 3,
-                costOfBana: 5,
-                costOfCoco: 5
+                costOfPomme: 2,
+                costOfTomatoes: 3,
+                costOfOrange: 10
             },
             computed: {
                 totalPrice() {
-                    return this.costOfPomme + this.costOfBana + this.costOfCoco;
+                    return this.costOfPomme + this.costOfTomatoes + this.costOfOrange;
                 }
             }
         });
