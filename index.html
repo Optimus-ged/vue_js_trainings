@@ -9,14 +9,28 @@
 
 <body>
     <div id="app">
-        <h2>{{ name }}</h2>
+        <h1>Vue Mart</h1>
+        <h2>Pannier d'achat</h2>
+        <ul>
+            <li>Pommes : {{ costOfPomme }}$</li>
+            <li>bananes : {{ costOfBana }}$</li>
+            <li>coco : {{ costOfCoco }}$</li>
+        </ul>
+        <p>Total : {{ totalPrice }}$</p>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
     <script>
         const app = new Vue({
             el: "#app",
             data: {
-                name: "Optimus ged yala"
+                costOfPomme: 3,
+                costOfBana: 5,
+                costOfCoco: 5
+            },
+            computed: {
+                totalPrice() {
+                    return this.costOfPomme + this.costOfBana + this.costOfCoco;
+                }
             }
         });
     </script>
