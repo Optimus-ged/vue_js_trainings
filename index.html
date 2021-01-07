@@ -10,13 +10,13 @@
 <body>
     <div id="app">
         <h1>Vue Mart</h1>
-        <h2>Shopping cart</h2>
+        <h2>My Shopping cart</h2>
         <ul>
             <li v-for="item in shoppingCart">
-                {{ item.label }} : {{ item.cost}}
+                {{ item.label }} : {{ item.cost }}$
             </li>
         </ul>
-        <p>Total amount : {{ totalPrice }}</p>
+        <p>Total amount : {{ totalAmount }}</p>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
     <script>
@@ -26,23 +26,23 @@
                 shoppingCart: [
                     {
                         label: "Apples",
-                        cost: 10,
+                        cost: 20,
                         url: "/Apples.html"
                     },
                     {
-                        label: "Coconuts",
-                        cost: 6,
-                        url: "/Coconuts.html"
+                        label: "Donnuts",
+                        cost: 11,
+                        url: "/Donnuts.html"
                     },
                     {
-                        label: "Oranges",
-                        cost: 4,
-                        url: "/Oranges.html"
-                    },
+                        label: "Orange",
+                        cost: 21,
+                        url: "/Orange.html"
+                    }
                 ]
             },
-            computed: {
-                totalPrice() {
+            computed : {
+                totalAmount() {
                     let total = 0;
                     this.shoppingCart.forEach(item => {
                         total += item.cost
