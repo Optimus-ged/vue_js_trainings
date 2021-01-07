@@ -18,18 +18,21 @@
         <div>
             <h2>Changer Ma couleur Preferee</h2>
             <label for="change-color">Changer Couleur</label>
-            <input id="change-color" type="text">
+            <input id="change-color" @keyup.enter="changeColor" type="text">
         </div>
     </div>
     <script>
         const app = new Vue({
             el: "#app",
             data: {
-                favoriteColor: "Yellow"
+                favoriteColor: "Black"
             },
             methods: {
                 showColor() {
                     alert(this.favoriteColor)
+                },
+                changeColor() {
+                    this.favoriteColor = document.getElementById("change-color").value
                 }
             }
         });
