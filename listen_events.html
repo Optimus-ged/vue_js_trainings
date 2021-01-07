@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+    <title>VueJs Events</title>
+</head>
+
+<body>
+    <div id="app">
+        <h1>Ma couleur preferee</h1>
+        <div>
+            <h2>Montrer ma couleur preferee</h2>
+            <button @click="showColor">Changer couleur !</button>
+        </div>
+        <div>
+            <h2>Changer Ma couleur preferee</h2>
+            <label for="change-color">Changer couleur :</label>
+            <input id="change-color" type="text">
+        </div>
+    </div>
+    <script>
+        const app = new Vue({
+            el: "#app",
+            data: {
+                favoriteColor: "blue"
+            },
+            methods: {
+                showColor() {
+                    alert(this.favoriteColor)
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>
