@@ -10,13 +10,13 @@
 
 <body>
     <div id="app">
-        <h1>Ma couleur Preferee</h1>
+        <h1>Ma couleur preferee</h1>
         <div>
-            <h2>Montrer Ma couleur Preferee</h2>
+            <h2>Montrer ma couleur preferee</h2>
             <button @click="showColor">Apuiller ici !</button>
         </div>
         <div>
-            <h2>Changer Ma couleur Preferee</h2>
+            <h2>Changer ma couleur preferee</h2>
             <label for="change-color">Changer Couleur</label>
             <input id="change-color" @keyup.enter="changeColor" type="text">
         </div>
@@ -25,14 +25,14 @@
         const app = new Vue({
             el: "#app",
             data: {
-                favoriteColor: "Black"
+                favoriteColor: "Red Red"
             },
             methods: {
                 showColor() {
-                    alert(this.favoriteColor)
+                    alert(this.favoriteColor);
                 },
                 changeColor() {
-                    this.favoriteColor = document.getElementById("change-color").value
+                    this.favoriteColor = document.getElementById("change-color").value;
                 }
             }
         });
