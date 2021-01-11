@@ -5,34 +5,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
-    <title>VueJs Events</title>
+    <title>Vue js Exercices</title>
 </head>
 
 <body>
     <div id="app">
-        <h1>Ma couleur preferee</h1>
+        <h1>Exercices vue js</h1>
         <div>
-            <h2>Montrer ma couleur preferee</h2>
+            <h2>Afficher la couleur</h2>
             <button @click="showColor">Apuiller ici !</button>
         </div>
         <div>
-            <h2>Changer ma couleur preferee</h2>
-            <label for="change-color">Changer Couleur</label>
-            <input id="change-color" @keyup.enter="changeColor" type="text">
+            <h2>Changer la couleur</h2>
+            <label for="change-color">Changer la couleur</label>
+            <input @keyup.enter="changeColor" id="change-color" type="text">
         </div>
     </div>
     <script>
         const app = new Vue({
             el: "#app",
             data: {
-                favoriteColor: "Red Red"
+                myColor: "Black"
             },
             methods: {
                 showColor() {
-                    alert(this.favoriteColor);
+                    alert(this.myColor);
                 },
                 changeColor() {
-                    this.favoriteColor = document.getElementById("change-color").value;
+                    this.myColor = document.getElementById("change-color").value;
                 }
             }
         });
